@@ -1,6 +1,6 @@
 Hand Movement Detection and Ball Control System
 
-<img align="right" alt="Coding" width="400" src="[https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasFV1qI_fU9buaGdX1B1zvQa7H2J4AY11-4HZ7DPr&s)">
+<img align="right" alt="Coding" width="400" src="https://developers.google.com/static/mediapipe/images/solutions/hand-landmarks.png">
 Overview
 This project is an assignment that challenges students to develop a system using a camera to detect and track hand movements.
 It utilizes the Mediapipe library for hand detection and tracking, and it aims to achieve the following objectives:
