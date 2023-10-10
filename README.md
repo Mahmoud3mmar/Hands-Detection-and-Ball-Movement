@@ -9,6 +9,8 @@ Extract the coordinates of a pointed finger.
 Transmit this data to a C# program.
 Create a graphical representation of a ball within a Windows Form application.
 Utilize the transmitted coordinates to control the ball's movement.
+
+
 Prerequisites
 Before you begin, ensure you have the following installed:
 
@@ -21,7 +23,7 @@ Clone this repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/hand-movement-detection.git
+git clone https://github.com/Mahmoud3mma/Hands-Detection-and-Ball-Movement.git
 cd hand-movement-detection
 Set up the Python environment:
 
@@ -61,4 +63,4 @@ This project is licensed under the MIT License.
 Acknowledgments
 Mention any resources, tutorials, or libraries you used or were inspired by during the development of this project.
 Contact
-If you have any questions or need assistance, feel free to contact [your-email@example.com].
+If you have any questions or need assistance, feel free to contact [mahmoud.ammar560@gmail.com].
