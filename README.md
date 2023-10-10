@@ -23,7 +23,7 @@ Clone this repository:
 
 bash
 Copy code
-git clone https://github.com/Mahmoud3mma/Hands-Detection-and-Ball-Movement.git
+git clone https://github.com/Mahmoud3mmar/Hands-Detection-and-Ball-Movement.git
 cd hand-movement-detection
 Set up the Python environment:
 
