@@ -29,15 +29,7 @@ Set up the Python environment:
 
 Install the required Python packages:
 
-bash
-Copy code
-pip install mediapipe
-Run the Python hand detection script:
-
-bash
-Copy code
-python hand_detection.py
-Set up the C# environment:
+  install requirments.txt
 
 Open the BallControlApp.sln solution file in Visual Studio.
 
@@ -52,11 +44,7 @@ The coordinates are transmitted to the C# application to control the ball's move
 Contributing
 If you'd like to contribute to this project, please follow these steps:
 
-Fork the repository.
-Create a new branch for your feature: git checkout -b feature-name.
-Make your changes and commit them: git commit -m 'Add some feature'.
-Push to the branch: git push origin feature-name.
-Create a pull request.
+
 License
 This project is licensed under the MIT License.
 
