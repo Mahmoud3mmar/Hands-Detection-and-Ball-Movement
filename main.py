@@ -18,6 +18,8 @@ print("Waiting for a connection...")
 connection, client_address = server_socket.accept()
 print("Connected to:", client_address)
 
+
+
 while True:
     # Read a frame from the webcam using cap.read()
     success, image = cap.read()
