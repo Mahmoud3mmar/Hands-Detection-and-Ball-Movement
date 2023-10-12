@@ -16,6 +16,12 @@ namespace BallMovement
     {
         private TcpClient client;
         private NetworkStream stream;
+        // Ball properties
+        private int ballX = 100; // Initial X position
+        private int ballY = 100; // Initial Y position
+        private int ballRadius = 20; // Ball radius
+        private int ballSpeed = 5; // Speed of ball movement
+
 
         public Form1()
         {
@@ -24,6 +30,7 @@ namespace BallMovement
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             try
             {
                 client = new TcpClient();
@@ -35,6 +42,7 @@ namespace BallMovement
                 // Start listening for data in a separate thread
                 Thread receiveThread = new Thread(StartListeningForCoordinates);
                 receiveThread.Start();
+
             }
             catch (Exception ex)
             {
@@ -72,15 +80,39 @@ namespace BallMovement
 
         private void DisplayCoordinates(string coordinates)
         {
-            if (CoordinatesTextB.InvokeRequired)
+            if (coordinates != null)
             {
-                CoordinatesTextB.Invoke(new Action(() => DisplayCoordinates(coordinates)));
-            }
-            else
-            {
-                // Append the received coordinates to the existing text in the TextBox
-                CoordinatesTextB.AppendText(coordinates + Environment.NewLine);
+                // Split the received coordinates into left and right hand parts
+                string[] handCoordinates = coordinates.Split('\n');
+
+                if (handCoordinates.Length >= 1)
+                {
+                    string leftHandCoordinates = handCoordinates[0];
+                    string[] leftHandParts = leftHandCoordinates.Split(',');
+
+                    if (leftHandParts.Length >= 8) // Assuming the 4th point (thumb) is available
+                    {
+                        int thumbX = int.Parse(leftHandParts[6]); // Replace '6' with the correct index
+                        int thumbY = int.Parse(leftHandParts[7]); // Replace '7' with the correct index
+
+                        // Calculate new ball position based on thumb coordinates
+                        ballX = thumbX;
+                        ballY = thumbY;
+
+                        // Redraw the ball
+                        this.Invalidate();
+                    }
+                }
             }
         }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Draw the ball at the new position
+            e.Graphics.FillEllipse(Brushes.Red, ballX - ballRadius, ballY - ballRadius, 2 * ballRadius, 2 * ballRadius);
+        }
+
     }
 }
